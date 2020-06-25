@@ -27,7 +27,8 @@ class HeroDetailsViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        setupHeroImageView()
+//        setupHeroImageView()
+//        fetchImage()
     }
     
     private func setupHeroImageView() {
@@ -134,12 +135,30 @@ class HeroDetailsViewController: UIViewController {
             
         }.resume()
     }
+    
+    /*
+    func fetchImage() {
+        let stringURL = hero.images.sm
+        guard let imageURL = URL(string: stringURL) else { return }
+        
+        URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            if let error = error { print(error); return }
+            if let response = response { print(response) }
+            
+            if let  data = data, let image = UIImage(data: data) {
+                self.activityIndicator.stopAnimating()
+                self.heroImageView.image = image
+            }
+        }.resume()
+    }
+ */
 }
 
 
 extension HeroDetailsViewController {
 
     private func transitionSelection() {
+       
         switch selection {
         case "Deadpool": setupHeroLabel()
         case "DarthVader": setupHeroLabel()
