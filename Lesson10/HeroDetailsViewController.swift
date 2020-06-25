@@ -27,6 +27,7 @@ class HeroDetailsViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+//     Пробовал двумя способами подгрузить картинку в деталях, но в обоих случаях она возвращает nil, никак не пойму почему так
 //        setupHeroImageView()
 //        fetchImage()
     }
